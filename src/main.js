@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './assets/css/index.css';
 
 // 导入路由模块
-import router from './routes/router.js';
+import router from './routes/router';
 
 new Vue({
   // ??????????
