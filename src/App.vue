@@ -25,6 +25,7 @@
   import AppSidebar from './components/AppSidebar.vue';
 
   export default {
+    // 局部组件
     components: {
       AppHeader,
       AppSidebar
