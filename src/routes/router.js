@@ -8,6 +8,8 @@ import EquipsList from '../views/equips/List.vue';
 import WeaponsList from '../views/weapons/List.vue';
 // 导入添加英雄组件
 import HeroAdd from '../views/heroes/add.vue';
+// 导入编辑英雄组件
+import HeroEdit from '../views/heroes/edit.vue';
 
 // 注册vue-router插件
 Vue.use(VueRouter);
@@ -22,7 +24,8 @@ var router = new VueRouter({
     { name: 'heroes', path: '/heroes', component: HeroesList },
     { name: 'equips', path: '/equips', component: EquipsList },
     { name: 'weapons', path: '/weapons', component: WeaponsList },
-    { name: 'heroadd', path: '/heroes/add', component: HeroAdd }
+    { name: 'heroadd', path: '/heroes/add', component: HeroAdd },
+    { name: 'heroedit', path: '/heroes/:id', component: HeroEdit }
   ]
 });
 

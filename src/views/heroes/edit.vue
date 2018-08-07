@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="sub-header">添加英雄</h2>
+    <h2 class="sub-header">编辑英雄</h2>
     <form>
       <div class="form-group">
         <label for="exampleInputEmail1">英雄名称</label>
@@ -10,7 +10,7 @@
         <label for="exampleInputPassword1">英雄性别</label>
         <input v-model="formData.gender" type="text" class="form-control" id="herogender" placeholder="英雄性别">
       </div>
-      <button @click.prevent="handleAdd" type="submit" class="btn btn-success">提交</button>
+      <button @click.prevent="handleEdit" type="submit" class="btn btn-success">提交</button>
     </form>
   </div>
 </template>
@@ -28,7 +28,7 @@
   },
   methods: {
     // 2 添加英雄处理函数
-    handleAdd() {
+    handleEdit() {
       axios
         .post('http://localhost:3000/heroes', this.formData)
         .then((response) => {
