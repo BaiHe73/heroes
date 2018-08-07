@@ -1,3 +1,4 @@
+<!-- 头部组件 -->
 <template>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
