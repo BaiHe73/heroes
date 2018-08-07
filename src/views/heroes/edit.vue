@@ -17,6 +17,7 @@
 <script>
  import axios from 'axios';
  export default{
+  props : ['id'],
   data() {
     return {
       // 1 绑定文本框的数据 为post传递的参数
@@ -26,21 +27,37 @@
       }
     }
   },
+  created() {
+    this.handleHero();
+  },
   methods: {
-    // 2 添加英雄处理函数
-    handleEdit() {
-      axios
-        .post('http://localhost:3000/heroes', this.formData)
+    handleHero() {
+       axios
+        .get(`http://localhost:3000/heroes/${ this.id }`)
         .then((response) => {
-          if(response.status === 201) {
-            this.$router.push('/heroes');
+          if(response.status === 200) {
+            this.formData = response.data;
           } else {
-            alert('添加失败');
+            alert('修改失败');
           }
         })
         .catch((err) => {
           console.log(err);
+        });
+    },
+    // 2 添加英雄处理函数
+    handleEdit() {
+      axios
+        .put(`http://localhost:3000/heroes/${ this.id }`,this.formData)
+        .then((response) => {
+          if(response.status === 200) {
+            this.$router.push('/heroes');
+            // this.handleHero;
+          }
         })
+        .catch((err) => {
+          console.log(err);
+        });
     }
   }
  };

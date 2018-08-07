@@ -25,7 +25,7 @@ var router = new VueRouter({
     { name: 'equips', path: '/equips', component: EquipsList },
     { name: 'weapons', path: '/weapons', component: WeaponsList },
     { name: 'heroadd', path: '/heroes/add', component: HeroAdd },
-    { name: 'heroedit', path: '/heroes/:id', component: HeroEdit }
+    { name: 'heroedit', path: '/heroes/:id', component: HeroEdit, props: true }
   ]
 });
 
